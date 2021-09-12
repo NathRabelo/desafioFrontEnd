@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <title>Desafio Front-End Nathalia Rabelo</title>
+
+    <script>
+
+        function verificarValor() {
+            
+            var combobox = document.getElementById("gorjeta");
+            var input = document.getElementById("valorGorgeta");
+            var botao = document.getElementById("botao");
+            var Porcentagem;
+
+            if (combobox.value == 1) {
+                input.disabled = true;
+                botao.disabled = true;
+                Porcentagem = 5
+            }
+            else if(combobox.value == 2){
+                input.value = ""
+                input.disabled = true;
+                botao.disabled = true;
+                Porcentagem = 10;
+            }
+            else if(combobox.value == 3){
+                input.value = "";
+                input.disabled = true;
+                botao.disabled = true;
+                Porcentagem = 15;
+        }
+        else if(combobox.value == 4){
+                input.value = "";
+                input.disabled = true;
+                botao.disabled = true;
+                Porcentagem = 25;
+        } 
+        else{
+            input.disabled = false;
+            botao.disabled = false;
+            Porcentagem = input;
+        }
+    </script>
+</head>
+<body>
+ 
+    <div class="box">
+        <div style="height: 25px; width: 950px;"></div>
+            <div class="conteudo-a">
+                <p>Digite o valor do pedido</p>
+                <input id="Valor" type="text" size="25" placeholder="Digite o valor aqui">
+                
+                <p>Quanto quer dar de gorjeta?</p>
+                <select id="gorjeta" onchange="verificarValor()">
+                    <option value="" selected disabled>Selecione</option>
+                    <option value="5">5 % </option>
+                    <option value="10">10 % </option>
+                    <option value="15">15 % </option>
+                    <option value="25">25 %</option>
+                    <option value="1">Outro</option>
+                </select><br>
+                <input type="text" id="valorGorgeta" name="valorGorgeta" disabled> <br>
+                <p>Quantas pessoas irão pagar?</p>
+                <input id="QtdPessoas" type="text" size="40" placeholder="Digite o valor aqui" size="10"> 
+            </div>
+
+        <div class="container-b">
+            <p>Valor total da gorjeta</p>
+            <input size="30" type="text" id="GorjetaTotal" style="background-color: #01A7C2;" >
+
+            <p>Valor que cada pessoa irá pagar de gorjeta</p>
+            <input size="30" type="text" id="GorjetaIndividual" style="background-color: #01A7C2;">
+
+            <button type="button" onclick="verificarValor()" id="botao" disabled>Calcular</button>
+        </div>
+
+    </div>
+</body>
+</html>
